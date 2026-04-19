@@ -1,0 +1,16 @@
+flowchart LR
+    Pembayar[Pembayar]
+    Bank[Sistem Bank]
+    ThirdParty[Third Party]
+
+    SistemPembayaran[[Sistem Pembayaran]]
+
+    Pembayar -->|Data pendaftaran<br/>Data pembayaran| SistemPembayaran
+    SistemPembayaran -->|Status pembayaran<br/>Bukti pembayaran| Pembayar
+
+    SistemPembayaran -->|Data transaksi| Bank
+    Bank -->|Status transaksi<br/>Konfirmasi bank| SistemPembayaran
+
+    SistemPembayaran -->|Data integrasi| ThirdParty
+    ThirdParty -->|Status proses| SistemPembayaran
+

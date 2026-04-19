@@ -1,0 +1,29 @@
+flowchart LR
+    %% External Entities
+    Bank[Sistem Bank]
+    ThirdParty[Third Party]
+
+    %% Data Store
+    D1[(D1 Data Transaksi)]
+
+    %% Level 2 Processes
+    P21[[2.1 Ambil Data Transaksi]]
+    P22[[2.2 Analisis Status Transaksi]]
+    P23[[2.3 Deteksi Anomali]]
+    P24[[2.4 Kirim Data Monitoring]]
+    P25[[2.5 Buat Laporan Monitoring]]
+    P26[[2.6 Kirim Laporan ke Bank]]
+
+    %% Flows
+    D1 -->|Data transaksi| P21
+    P21 -->|Data transaksi| P22
+
+    P22 -->|Status transaksi| P23
+    P22 -->|Ringkasan status| P25
+
+    P23 -->|Data anomali| P24
+    P24 -->|Data monitoring| ThirdParty
+
+    P25 -->|Laporan monitoring| P26
+    P26 -->|Laporan monitoring| Bank
+

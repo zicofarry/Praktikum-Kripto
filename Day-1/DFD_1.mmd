@@ -1,0 +1,26 @@
+flowchart LR
+    %% External Entities
+    Pembayar[Pembayar]
+    Bank[Sistem Bank]
+    ThirdParty[Third Party]
+
+    %% Processes
+    P1[[1.0 Pembayaran]]
+    P2[[2.0 Monitoring]]
+
+    %% Data Store
+    D1[(D1 Data Transaksi)]
+
+    %% Pembayaran
+    Pembayar -->|Data pembayaran| P1
+    P1 -->|Data transaksi| Bank
+    Bank -->|Status transaksi| P1
+    P1 -->|Data transaksi| D1
+    P1 -->|Status pembayaran<br/>Bukti pembayaran| Pembayar
+
+    %% Monitoring
+    D1 -->|Data transaksi| P2
+    P2 -->|Data monitoring| ThirdParty
+    ThirdParty -->|Status monitoring| P2
+    P2 -->|Laporan monitoring| Bank
+
