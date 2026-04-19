@@ -55,7 +55,7 @@ def enkripsi(basis, eksponen, n):
  
 if __name__ == "__main__":
     # Bangkitkan kunci
-    kunci = bangkitkan_kunci(61, 53)
+    kunci = bangkitkan_kunci(73, 97)
     print(f"Kunci E yang didapat: {kunci['e']}")
  
     pesan = 65
@@ -64,3 +64,8 @@ if __name__ == "__main__":
     encrypted = enkripsi(pesan, kunci["e"], kunci["n"])
     print(f"Pesan asli    : {pesan}")
     print(f"Hasil Enkripsi: {encrypted}")
+
+    # Dekripsi dengan kunci privat
+    decrypted = enkripsi(encrypted, kunci["d"], kunci["n"])
+    print(f"Hasil Dekripsi: {decrypted}")
+    print(f"Pesan asli == Hasil Dekripsi? {pesan == decrypted}")

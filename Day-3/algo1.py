@@ -45,7 +45,7 @@ def bangkitkan_kunci(p, q):
 if __name__ == "__main__":
     # Gunakan bilangan prima kecil untuk belajar
     # Jangan gunakan angka yang sama!
-    p = 61
-    q = 53
+    p = 71
+    q = 89
     bangkitkan_kunci(p, q)
 

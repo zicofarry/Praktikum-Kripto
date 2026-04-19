@@ -1,11 +1,11 @@
 def diffie_hellman():
     # Parameter publik (disepakati bersama)
-    p = 23   # bilangan prima
-    g = 5    # generator
+    p = 101  # bilangan prima
+    g = 7    # generator
  
     # Kunci privat masing-masing (rahasia)
-    a = 6    # kunci privat Alice
-    b = 15   # kunci privat Bob
+    a = 15   # kunci privat Alice
+    b = 21   # kunci privat Bob
  
     # Kunci publik yang dikirimkan
     A = pow(g, a, p)   # Alice kirim ke Bob
